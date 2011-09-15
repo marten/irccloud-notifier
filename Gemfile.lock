@@ -1,14 +1,28 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.2.6)
     getopt (1.4.1)
+    heroku (2.7.0)
+      launchy (>= 0.3.2)
+      rest-client (~> 1.6.1)
+      rubyzip
+      term-ansicolor (~> 1.0.5)
     json (1.6.0)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
+    mime-types (1.16)
     prowl (0.1.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rubyzip (0.9.4)
+    term-ansicolor (1.0.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   getopt
+  heroku
   json
   prowl

@@ -15,9 +15,9 @@ opt = Getopt::Long.getopts(
   ["--apikey", "-a",    Getopt::REQUIRED]
 )
 
-email = opt['email'] 
-pass  = opt['password']
-api   = opt['apikey']
+email = opt['email']    || ENV['IRCCLOUD_EMAIL']
+pass  = opt['password'] || ENV['IRCCLOUD_PASS']
+api   = opt['apikey']   || ENV['PROWL_APIKEY']
 
 #TODO Make this configurable
 ignorednicks = ["github"]
