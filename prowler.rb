@@ -21,6 +21,7 @@ api   = opt['apikey']   || ENV['PROWL_APIKEY']
 
 #TODO Make this configurable
 ignorednicks = ["github"]
+ignoredstrings = [/Capistrano: marten is deploying/]
 
 if !email or !pass or !api then
   puts 'Usage: ' + $0 + ' --email <you@example.com> --password <your_password> --apikey <prowl_api_key>'
@@ -79,6 +80,7 @@ http.request_get(uri_stream.path, {'cookie'=>session}) {|response|
           # "chan":"#test",
           # "cid":8643}
           next if ignorednicks.include?(ev["from"])
+          next if ignoredstrings.find {|regex| ev["msg"] =~ regex }
           puts "PROWLED"
           prowl.add(:event => "Highlight", :description => "#{ev["chan"]} <#{ev['from']}> #{ev['msg']}")
         end
