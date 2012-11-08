@@ -33,8 +33,8 @@ end
 prowl = Prowl.new(:apikey => api, :application => "IrcCloud Prowler")
 raise "Sorry, the Prowl API key is not valid." unless prowl.valid?
 
-uri_login  = URI.parse('https://irccloud.com/chat/login')
-uri_stream = URI.parse('https://irccloud.com/chat/stream')
+uri_login  = URI.parse('https://alpha.irccloud.com/chat/login')
+uri_stream = URI.parse('https://alpha.irccloud.com/chat/stream')
 
 # do login to get session cookie:
 puts 'Logging in...'
